@@ -1,7 +1,19 @@
-tmp/*
-config/database.php
-app/tmp/*
-app/config/database.php
-!empty
+#for Mac
 .DS_Store
+
+#cake
 .*
+./index.php
+!empty
+
+#for Admin
+config/core.php.php
+app/config/core.php
+config/database.php
+app/config/database.php
+tmp/*
+app/tmp/*
+
+#for Commiters
+config/*
+app/config/*
