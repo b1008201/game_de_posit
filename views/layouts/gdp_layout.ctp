@@ -66,7 +66,7 @@
             hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
             hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!</p>
             <p>
-                <a class="btn btn-primary btn-large">Learn more &raquo;</a>
+                <a class="btn btn-primary btn-large">hABeO! &raquo;</a>
             </p>
         </div>
 
