@@ -29,7 +29,7 @@
                 <a class="brand" href="#home"><i class="icon-home"></i> </a>
                 <a class="brand" href="#game"><i class="icon-play-circle"></i> </a>
                 <a class="brand" href="#community"><i class="icon-user"></i> </a>
-                <a class="brand" href="./"><i class="icon-refresh"></i> </a>
+                <a class="brand" href="#help"><i class="icon-book"></i> </a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li><a href="#home">Home</a></li>
