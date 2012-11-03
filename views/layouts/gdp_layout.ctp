@@ -16,7 +16,7 @@
         ?>
     </head>
 
-    <body <?php if(isset($body_for_layout)) ?>">
+    <body <?php if(isset($body_for_layout)) ?>>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container" style="padding: 0px 20px 0px 20px">
@@ -44,32 +44,38 @@
     </div>
 
     <section id="home">
+    <div style="min-height:60px"></div>
     <div class="container" style="min-height:1136px">
-        <div style="min-height:55px"></div>
         <?php echo $this->element('home', array("title" => "Home")); ?>
     </div>
+    </section>
 
     <section id="game">
+    <div style="min-height:45px"></div>
     <div class="container" style="min-height:1136px">
-        <div style="min-height:55px"></div>
-        <?php echo $this->element('mygame', array("title" => "MyGame")); ?>
+        <div class="row">
+            <div class="span9">
+                <iframe src="./mygame" style="border:0;min-width:320px;min-height:528px;margin-left:-15px"></iframe>
+            </div>
+        </div>
     </div>
+    </section>
 
     <section id="community">
+    <div style="min-height:60px"></div>
     <div class="container" style="min-height:1136px">
-        <div style="min-height:55px"></div>
         Community
         <?php echo $content_for_layout; ?>
     </div>
+    </section>
 
     <section id="help">
+    <div style="min-height:60px"></div>
     <div class="container" style="min-height:1136px">
-        <div style="min-height:55px"></div>
-        Help
-        <footer>
-            <p>&copy; hABeO! 2012</p>
-        </footer>
+        <p><?php echo $this->element('help', array("title" => "Home")); ?></p>
+        <p>&copy; hABeO! 2012</p>
     </div>
+    </section>
 
     <?php
     echo $this->element('sql_dump');
