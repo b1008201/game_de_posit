@@ -1,0 +1,10 @@
+#ナビゲーション固定
+.navbar-fixed-top { {
+    position: fixed;
+}
+
+.navbar .icon {
+    margin: 0 0 0 -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

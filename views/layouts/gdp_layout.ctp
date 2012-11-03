@@ -8,140 +8,90 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
             echo $html->css("bootstrap.min.css", "stylesheet");
-            echo '<style type="text/css">body {padding-top: 60px;padding-bottom: 40px;}</style>';
+            echo '<style type="text/css">body {padding-bottom: 40px; style="overflow-y: hidden;} </style>';
             echo $html->css("bootstrap-responsive.min.css", "stylesheet");
             echo $scripts_for_layout;
+            echo '<style type="text/css">.navbar-fixed-top{position: fixed;} .brand [class^="icon-"], .brand [class*=" icon-"]{background-image: url("img/glyphicons-halflings-white.png"); margin-top: 5px;}</style>';
+            //echo $html->css("bootstrap-habeo-tuned.css", "stylesheet")
         ?>
-
     </head>
 
-    <body <?php if(isset($body_for_layout)) ?>>
-
-
+    <body <?php if(isset($body_for_layout)) ?>">
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">hABeO!</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">hABeO!</a></li>
-              <li><a href="#about">hABeO!</a></li>
-              <li><a href="#contact">hABeO!</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">hABeO! <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">hABeO!</a></li>
-                  <li><a href="#">hABeO!</a></li>
-                  <li><a href="#">hABeO!</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">hABeO!</li>
-                  <li><a href="#">hABeO!</a></li>
-                  <li><a href="#">hABeO!</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="hABeO!">
-              <input class="span2" type="password" placeholder="hABeO!">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
-          </div><!--/.nav-collapse -->
+        <div class="navbar-inner">
+            <div class="container" style="padding: 0px 20px 0px 20px">
+                <a class="btn btn-navbar" data-toggle="collapse"
+                    data-target=".nav-collapse"> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">GameDePosit</a>
+                <a class="brand" href="#home"><i class="icon-home"></i> </a>
+                <a class="brand" href="#game"><i class="icon-play-circle"></i> </a>
+                <a class="brand" href="#community"><i class="icon-user"></i> </a>
+                <a class="brand" href="./"><i class="icon-refresh"></i> </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#game">Game</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#help">Help</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
         </div>
-      </div>
     </div>
 
-    <div
-        class="container">
+    <section id="home">
+    <div class="container" style="min-height:1136px">
+        <div style="min-height:55px"></div>
+        <?php echo $this->element('home', array("title" => "Home")); ?>
+    </div>
 
-        <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="hero-unit">
-            <h1>hABeO!</h1>
-            <p>hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-            hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-            hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-            hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!</p>
-            <p>
-                <a class="btn btn-primary btn-large">hABeO! &raquo;</a>
-            </p>
-        </div>
+    <section id="game">
+    <div class="container" style="min-height:1136px">
+        <div style="min-height:55px"></div>
+        <?php echo $this->element('mygame', array("title" => "MyGame")); ?>
+    </div>
 
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="span4">
-                <h2>hABeO!</h2>
-                <p>
-                    <?php echo $content_for_layout; ?>
-                </p>
-                <p>
-                    <a class="btn" href="#">hABeO! &raquo;</a>
-                </p>
-            </div>
-            <div class="span4">
-                <h2>hABeO!</h2>
-                <p>hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-                hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-                hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-                hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!</p>
-                <p>
-                    <a class="btn" href="#">hABeO! &raquo;</a>
-                </p>
-            </div>
-            <div class="span4">
-                <h2>Heading</h2>
-                <p>hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-                hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-                hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!
-                hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!hABeO!</p>
-                <p>
-                    <a class="btn" href="#">hABeO! &raquo;</a>
-                </p>
-            </div>
-        </div>
+    <section id="community">
+    <div class="container" style="min-height:1136px">
+        <div style="min-height:55px"></div>
+        Community
+        <?php echo $content_for_layout; ?>
+    </div>
 
-        <hr>
-
+    <section id="help">
+    <div class="container" style="min-height:1136px">
+        <div style="min-height:55px"></div>
+        Help
         <footer>
             <p>&copy; hABeO! 2012</p>
         </footer>
-
     </div>
-    <!-- /container -->
 
     <?php
     echo $this->element('sql_dump');
-    echo $html->script('bootstrap.min.js');
     echo $html->script('jquery-1.8.2.min.js');
+    echo $html->script('bootstrap.min.js');
+    echo $html->script('bootstrapdropdown.js');
+    echo $html->script('bootstrap-transition.js');
+    echo $html->script('bootstrap-alert.js');
+    echo $html->script('bootstrap-modal.js');
+    echo $html->script('bootstrap-scrollspy.js');
+    echo $html->script('bootstrap-tab.js');
+    echo $html->script('bootstrap-tooltip.js');
+    echo $html->script('bootstrap-popover.js');
+    echo $html->script('bootstrap-button.js');
+    echo $html->script('bootstrap-collapse.js');
+    echo $html->script('bootstrap-carousel.js');
+    echo $html->script('bootstrap-typeahead.js');
     ?>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/jquery.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-transition.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-alert.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-modal.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-dropdown.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-scrollspy.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-tab.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-tooltip.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-popover.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-button.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-collapse.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-carousel.js"></script>
-    <script
-        src="http://twitter.github.com/bootstrap//assets/js/bootstrap-typeahead.js"></script>
+    <script>
+    window.addEventListener('load', function() {
+        setTimeout(scrollTo, 0, 0, 1);
+    }, false);
+    </script>
 </body>
 </html>
