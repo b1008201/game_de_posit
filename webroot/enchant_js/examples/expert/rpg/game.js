@@ -140,9 +140,9 @@ window.onload = function() {
 
         var player = new Sprite(32, 32);
         player.x = 6 * 16 - 8;
-        player.y = 10 * 16;
+        player.y = 9 * 16;
         var image = new Surface(96, 128);
-        image.draw(game.assets['chara0.gif'], 0, 0, 96, 128, 0, 0, 96, 128);
+        image.draw(game.assets['chara0.gif'], 96, 0, 96, 128, 0, 0, 96, 128);
         player.image = image;
 
         player.isMoving = false;
