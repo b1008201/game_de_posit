@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#">GameDePosit</a>
+                <a class="brand" href="./">GameDePosit</a>
                 <a class="brand" href="#home"><i class="icon-home"></i> </a>
                 <a class="brand" href="#game"><i class="icon-play-circle"></i> </a>
                 <a class="brand" href="#community"><i class="icon-user"></i> </a>
