@@ -72,8 +72,7 @@
     <section id="help">
     <div style="min-height:60px"></div>
     <div class="container" style="min-height:1136px">
-        <p><?php echo $this->element('help', array("title" => "Home")); ?></p>
-        <p>&copy; hABeO! 2012</p>
+        <?php echo $this->element('help', array("title" => "Home")); ?>
     </div>
     </section>
 
