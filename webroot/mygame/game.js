@@ -555,7 +555,7 @@ var mura1_s2 = new Array("あらっ　みつかっちゃった。", "しかた�
 var mura2_s2 = new Array("たからもの　なんて<br>うちには　ないわよ。");
 var mura2_s = new Array("<font color=\"yellow\">5000 dp</font>　たまってから<br>でなおして　いらっしゃい。", "そうしたら　<font color=\"yellow\">でんせつの　ゆびわ</font> を<br>あげるわ。");
 var fuda_s = new Array("キケン！　らくせきに　より<br>つうこうどめ！");
-var mura4_s = new Array("おれは　ちからじまん。", "こんな　いわなんて<br>かんたんに　どかせるぜ。", "でんせつの　ゆびわを<br>わたして　くれたら", "らくせきを　かたづけて<br>やるよ。");
+var mura4_s = new Array("おれは　ちからじまん。", "こんな　いわなんて<br>かんたんに　どかせるぜ。", "<font color=\"yellow\">でんせつの　ゆびわ</font>　を<br>わたして　くれたら", "らくせきを　かたづけて<br>やるよ。");
 var mura3_s = new Array("にしがわの　いえは<br>わたしの　あねの　いえなの。", "<font color=\"yellow\">100dp</font>　で　ひみつを<br>おしえて　あげても　いいわよ。", "<font color=\"yellow\">100dp</font>　かかるけど<br>ほんとうに　きくのね？", "あら　いいの？");
 var mura3_s2 = new Array("あのいえには　うらぐちが<br>あるの。", "<font color=\"yellow\">みぎから　4れつめ</font>　の　かべを<br>しらべてみると　いいわよ。");
 
