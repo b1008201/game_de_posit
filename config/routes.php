@@ -37,4 +37,4 @@
  *  GDP routing
  * /
  */
-    Router::connect('/', array('controller' => 'home', 'action' => 'index'));
+    Router::connect('/', array('controller' => 'main', 'action' => 'home'));

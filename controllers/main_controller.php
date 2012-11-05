@@ -18,14 +18,13 @@ class MainController extends AppController {
     function beforeFilter() {
         parent::beforeFilter();
         $this->layout = 'gdp_layout';
-
+        $title_for_layout = 'GameDePosit';
+        $this->set(compact('title_for_layout','body_for_layout'));
     }
 
     function afterFilter(){
         parent::beforeFilter();
         $body_for_layout = '';//"leftmargin='0' topmargin='0' bgcolor='#ffffff' marginheight='0' marginwidth='0'";
-        $title_for_layout = 'GameDePosit';
-        $this->set(compact('title_for_layout','body_for_layout'));
     }
 
     /*
