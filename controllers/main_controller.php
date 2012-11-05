@@ -31,7 +31,7 @@ class MainController extends AppController {
      *
      */
     function index() {
-        //$this->redirect(array('controller' => 'main', 'action'=>'home'));
+        $this->redirect(array('controller' => 'main', 'action'=>'home'));
     }
 
     function home(){
