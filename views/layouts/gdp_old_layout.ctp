@@ -26,16 +26,16 @@
                     class="icon-bar"></span>
                 </a>
                 <a class="brand" href="./">GameDePosit</a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'), array('class' => 'bland'));?>"><i class=icon-home></i></a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'game'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i> </a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'communities', 'action' => 'index'), array('class' => 'bland'));?>"><i class="icon-user"></i> </a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'help'), array('class' => 'bland'));?>"><i class="icon-book"></i> </a>
+                <a class="brand" href="#home"><i class="icon-home"></i> </a>
+                <a class="brand" href="#game"><i class="icon-play-circle"></i> </a>
+                <a class="brand" href="#community"><i class="icon-user"></i> </a>
+                <a class="brand" href="#help"><i class="icon-book"></i> </a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li><?php echo $html->link('Home', array('controller' => 'main', 'action' => 'home'));?></li>
-                        <li><?php echo $html->link('Game', array('controller' => 'main', 'action' => 'game'));?></li>
-                        <li><?php echo $html->link('Community', array('controller' => 'communities', 'action' => 'index'));?></li>
-                        <li><?php echo $html->link('Help', array('controller' => 'main', 'action' => 'help'));?></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#game">Game</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#help">Help</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -43,10 +43,41 @@
         </div>
     </div>
 
-    <div style="min-height: 45px"></div>
-    <?php echo $content_for_layout; ?>
+    <section id="home">
+    <div style="min-height:60px"></div>
+    <div class="container" style="min-height:1136px">
+        <?php echo $this->element('home', array("title" => "Home")); ?>
+    </div>
+    </section>
+
+    <section id="game">
+    <div style="min-height:45px"></div>
+    <div class="container" style="min-height:1136px">
+        <div class="row">
+            <div class="span9">
+                <iframe src="./mygame" style="border:0;min-width:320px;min-height:528px;margin-left:-15px"></iframe>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="community">
+    <div style="min-height:60px"></div>
+    <div class="container" style="min-height:1136px">
+        Community
+        <?php echo $content_for_layout; ?>
+    </div>
+    </section>
+
+    <section id="help">
+    <div style="min-height:60px"></div>
+    <div class="container" style="min-height:1136px">
+        <?php echo $this->element('help', array("title" => "Home")); ?>
+    </div>
+    </section>
 
     <?php
+    echo $this->element('sql_dump');
     echo $html->script('jquery-1.8.2.min.js');
     echo $html->script('bootstrap.min.js');
     echo $html->script('bootstrapdropdown.js');
