@@ -1,6 +1,7 @@
 <section id="help">
-    <div class="container" style="min-height: 1136px">
+    <div class="container">
         <div class="row">
+        <div style="min-height: 10px"></div>
             <p>About the "GameDePosit"</p>
             <p>旅行に行きたい,PC を買い替えたい,バッグが欲しい...そんな目標をもって,貯金をしたいと考えてい
                 る人は世の中に溢れています.しかし,目標額に達するまできちんと続けるのは難しいものです.Game DE

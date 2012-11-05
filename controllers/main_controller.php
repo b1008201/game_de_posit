@@ -37,6 +37,9 @@ class MainController extends AppController {
     function home(){
     }
 
+    function maricolle(){
+    }
+
     function game(){
     }
 

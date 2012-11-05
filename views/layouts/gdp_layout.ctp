@@ -27,13 +27,13 @@
                 </a>
                 <a class="brand" href="./">GameDePosit</a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'), array('class' => 'bland'));?>"><i class=icon-home></i></a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'game'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i> </a>
+                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'maricolle'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i> </a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'communities', 'action' => 'index'), array('class' => 'bland'));?>"><i class="icon-user"></i> </a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'help'), array('class' => 'bland'));?>"><i class="icon-book"></i> </a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li><?php echo $html->link('Home', array('controller' => 'main', 'action' => 'home'));?></li>
-                        <li><?php echo $html->link('Game', array('controller' => 'main', 'action' => 'game'));?></li>
+                        <li><?php echo $html->link('Game', array('controller' => 'main', 'action' => 'maricolle'));?></li>
                         <li><?php echo $html->link('Community', array('controller' => 'communities', 'action' => 'index'));?></li>
                         <li><?php echo $html->link('Help', array('controller' => 'main', 'action' => 'help'));?></li>
                     </ul>
@@ -50,6 +50,9 @@
     echo $html->script('jquery-1.8.2.min.js');
     echo $html->script('bootstrap.min.js');
     echo $html->script('bootstrapdropdown.js');
+    echo $html->script('bootstrap-carousel.js');
+    /*
+    echo $html->script('bootstrap-typeahead.js');
     echo $html->script('bootstrap-transition.js');
     echo $html->script('bootstrap-alert.js');
     echo $html->script('bootstrap-modal.js');
@@ -59,9 +62,9 @@
     echo $html->script('bootstrap-popover.js');
     echo $html->script('bootstrap-button.js');
     echo $html->script('bootstrap-collapse.js');
-    echo $html->script('bootstrap-carousel.js');
-    echo $html->script('bootstrap-typeahead.js');
+    */
     ?>
+
     <script>
     window.addEventListener('load', function() {
         setTimeout(scrollTo, 0, 0, 1);
