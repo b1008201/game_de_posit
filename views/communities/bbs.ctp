@@ -1,11 +1,11 @@
 
 
-	<div class="page-header">
+<div class="page-header">
 		<h2>アルトサクソフォン</h2>
 	</div>
 
-	<div class="row">
-    	<div class="span9">
+<div class="row">
+    <div class="span9">
 	<?php
 	$bbs=array();
 
@@ -24,7 +24,22 @@
 				</div>
 			</li>
 		</ul>
-	<?php	} ?>
-	  </div>
+	<?php	}?>
 	</div>
+</div>
 
+<div class="row">
+    <div class="span9">
+		<div align="center">
+    <?php	
+		echo $paginator->prev('< '.__('前へ', true), array(), null, array('class'=>'disabled' )) . ' | '.
+	$paginator->numbers().
+	' | '.
+	$paginator->next(__('次へ', true).' >', array(), null, array
+	('class'=>'disabled' )); 
+	?>
+		</div>
+	</div>
+</div>
+	
+	
