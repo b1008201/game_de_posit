@@ -12,7 +12,7 @@
             echo $html->css("bootstrap-responsive.min.css", "stylesheet");
             echo $scripts_for_layout;
             echo '<style type="text/css">.navbar-fixed-top{position: fixed;} .brand [class^="icon-"], .brand [class*=" icon-"]{background-image: url("/img/glyphicons-halflings-white.png"); margin-top: 5px;}</style>';
-            //echo $html->css("bootstrap-habeo-tuned.css", "stylesheet")
+            echo $html->css("bootstrap-habeo-tuned.css", "stylesheet")
         ?>
     </head>
 
