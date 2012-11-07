@@ -481,7 +481,7 @@ window.onload = function() {
 		mainScene.addChild(control);
 		
 		// ゲーム終了画面
-		var endPanel = new Sprite(320, 356);
+		var endPanel = new Sprite(320, 365);
 		endPanel.x = 0;
 		endPanel.y = 0;
 		endPanel.backgroundColor = 'white';
