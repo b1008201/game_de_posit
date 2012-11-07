@@ -7,7 +7,7 @@ var dep = 0;	// デポジットフラグ
 
 window.onload = function() {
 	/* ゲーム全体の初期設定等 */
-	var game = new Game(320, 365);
+	var game = new Game(320, 362);
 	game.fps = 15;
 	game.preload('map1.gif', 'chara0.gif', 'logo.png', 'tw.gif', 'face.gif');
 	game.onload = function() {
@@ -497,7 +497,7 @@ window.onload = function() {
 		mainScene.addChild(control);
 		
 		// ゲーム終了画面
-		var endPanel = new Sprite(320, 365);
+		var endPanel = new Sprite(320, 362);
 		endPanel.x = 0;
 		endPanel.y = 0;
 		endPanel.backgroundColor = 'white';
