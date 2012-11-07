@@ -9,7 +9,7 @@ window.onload = function() {
 	/* ゲーム全体の初期設定等 */
 	var game = new Game(320, 365);
 	game.fps = 15;
-	game.preload('map1.gif', 'chara0.gif', 'logo.png');
+	game.preload('map1.gif', 'chara0.gif', 'logo.png', 'tw.gif', 'face.gif');
 	game.onload = function() {
 		/* ゲームスタート画面 */
 		var startScene = new Scene();
@@ -331,6 +331,20 @@ window.onload = function() {
 		depLabel2.x = 60;
 		depLabel2.y = 90;
 		depLabel2.color = 'white';
+		
+		var twlogo = new Sprite(35, 35);
+		twlogo.image = game.assets['tw.gif'];
+		twlogo.scaleX = 0.55;
+		twlogo.scaleY = 0.55;
+		twlogo.x = 210;
+		twlogo.y = 210;
+		
+		var fblogo = new Sprite(35, 35);
+		fblogo.image = game.assets['face.gif'];
+		fblogo.scaleX = 0.55;
+		fblogo.scaleY = 0.55;
+		fblogo.x = 235;
+		fblogo.y = 210;
 
 		var okButton = new Button("OK", "light");
 		okButton.x = 140;
@@ -341,6 +355,8 @@ window.onload = function() {
 		depComplete.addChild(depPanel);
 		depComplete.addChild(depLabel1);
 		depComplete.addChild(depLabel2);
+		depComplete.addChild(twlogo);
+		depComplete.addChild(fblogo);
 		depComplete.addChild(okButton);
 
 		// 選択肢ボタン
