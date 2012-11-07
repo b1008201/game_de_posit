@@ -1,9 +1,11 @@
 
 
 	<div class="page-header">
-		<h2>エレキギター RGXA2</h2>
+		<h2>アルトサクソフォン</h2>
 	</div>
 
+	<div class="row">
+    	<div class="span9">
 	<?php
 	$bbs=array();
 
@@ -23,6 +25,6 @@
 			</li>
 		</ul>
 	<?php	} ?>
-
-
+	  </div>
+	</div>
 
