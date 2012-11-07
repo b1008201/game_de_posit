@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
                 </a>
-                <a class="brand" href="./">GameDePosit</a>
+                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'));?>">GameDePosit</a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'), array('class' => 'bland'));?>"><i class=icon-home></i></a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'maricolle'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i> </a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'communities', 'action' => 'index'), array('class' => 'bland'));?>"><i class="icon-user"></i> </a>
