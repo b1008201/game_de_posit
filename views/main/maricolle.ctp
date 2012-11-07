@@ -63,3 +63,9 @@
         data-slide="prev">&lsaquo;</a> <a class="carousel-control right"
         href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
+
+
+<script>
+    $('.myCarousel').carousel({ interval: 0 })
+</script>
+
