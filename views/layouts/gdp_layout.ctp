@@ -64,6 +64,13 @@
     echo $html->script('bootstrap-collapse.js');
     */
     ?>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel({
+          interval: 99999
+        });
+      });
+    </script>
 
     <script>
     window.addEventListener('load', function() {
