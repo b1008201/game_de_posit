@@ -64,8 +64,7 @@
         href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 
-
 <script>
-    $('.myCarousel').carousel({ interval: 0 })
+    $('.myCarousel').carousel('pause')
 </script>
 
