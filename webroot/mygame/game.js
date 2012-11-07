@@ -7,7 +7,7 @@ var dep = 0;	// デポジットフラグ
 
 window.onload = function() {
 	/* ゲーム全体の初期設定等 */
-	var game = new Game(320, 356);
+	var game = new Game(320, 360);
 	game.fps = 15;
 	game.preload('map1.gif', 'chara0.gif', 'logo.png');
 	game.onload = function() {
