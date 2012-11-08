@@ -49,7 +49,7 @@ class MainController extends AppController {
 
     public function twitter() {
         $consumer = $this->createConsumer();
-        $requestToken = $consumer->getRequestToken('http://twitter.com/oauth/request_token', 'http://localhost/_git_gdp/main/twitter_callback');
+        $requestToken = $consumer->getRequestToken('http://twitter.com/oauth/request_token', ' 	http://cjg00s8-ahv-app000.c4sa.net/main/twitter_callback');
         $this->Session->write('twitter_request_token', $requestToken);
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
@@ -58,7 +58,7 @@ class MainController extends AppController {
         $requestToken = $this->Session->read('twitter_request_token');
         $consumer = $this->createConsumer();
         $accessToken = $consumer->getAccessToken('http://twitter.com/oauth/access_token', $requestToken);
-        var_dump($consumer->post($accessToken->key, $accessToken->secret, 'http://twitter.com/statuses/update.json', array('status' => 'hello world from GameDePosit.app')));
+        var_dump($consumer->post($accessToken->key, $accessToken->secret, 'http://twitter.com/statuses/update.json', array('status' => 'hello world! written by GameDePosit.app')));
     }
 
     private function createConsumer() {
