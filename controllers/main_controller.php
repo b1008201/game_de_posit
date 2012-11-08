@@ -58,35 +58,12 @@ class MainController extends AppController {
         $requestToken = $this->Session->read('twitter_request_token');
         $consumer = $this->createConsumer();
         $accessToken = $consumer->getAccessToken('http://api.twitter.com/oauth/access_token', $requestToken);
-        var_dump($consumer->post($accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/statuses/update.json', array('status' => 'hello world! written by GameDePosit.app')));
+        $tweet = $consumer->post($accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/statuses/update.json', array('status' => 'hello world! written by GameDePosit.app'));
+        var_dump($tweet);
     }
 
     private function createConsumer() {
         return new OAuth_Consumer('lnaIBId9kLLKty23VZiaQ', '8GfCVAi1Ilrd47iNYPd3KzJHfPOOmtNRTu4yyRio');
     }
 
-    public function twitter_bot(){
-        $name = 'GameDEPosit';
-        $uses = array();
-        // Consumer key の値
-        $consumerKey = 'lnaIBId9kLLKty23VZiaQ';
-        // Consumer secret の値
-        $consumerSecret = '8GfCVAi1Ilrd47iNYPd3KzJHfPOOmtNRTu4yyRio';
-        // Access Token の値
-        $accessToken = '217319965-JbwJPvSTyImgeQr0NlY9YnGWU75DEm6dqPsAnzmq';
-        // Access Token Secret の値
-        $accessTokenSecret = 'qr5LcobZlhFpK4oYpp67bIPNhJwIHwyFnPNxTs3oSQ';
-
-        $consumer = new OAuth_Consumer($consumerKey, $consumerSecret);
-
-        $tweet = $consumer->post(
-            $accessToken,
-            $accessTokenSecret,
-            'http://api.twitter.com/1/statuses/update.xml',
-            array('status'=>'written by game_de_posit')
-        );
- 
-        pr($tweet);
-        exit();
-    }
 }
