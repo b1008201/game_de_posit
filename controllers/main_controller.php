@@ -48,7 +48,7 @@ class MainController extends AppController {
     }
 
     public function twitter() {
-        $callbackUrl = env('HTTP_HOST').'/main/twitter_callback';
+        $callbackUrl = 'http://'.env('HTTP_HOST').'/main/twitter_callback';
         $consumer = $this->createConsumer();
         $requestToken = $consumer->getRequestToken('http://api.twitter.com/oauth/request_token', $callbackUrl);
         $this->Session->write('twitter_request_token', $requestToken);
