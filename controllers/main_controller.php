@@ -58,7 +58,7 @@ class MainController extends AppController {
         $requestToken = $this->Session->read('twitter_request_token');
         $consumer = $this->createConsumer();
         $accessToken = $consumer->getAccessToken('http://twitter.com/oauth/access_token', $requestToken);
-        var_dump($consumer->post($accessToken->key, $accessToken->secret, 'http://twitter.com/statuses/update.json', array('status' => 'hello world! written by GameDePosit.app')));
+        var_dump($consumer->post($accessToken->key, $accessToken->secret, 'http://twitter.com/1/statuses/update.json', array('status' => 'hello world! written by GameDePosit.app')));
     }
 
     private function createConsumer() {
