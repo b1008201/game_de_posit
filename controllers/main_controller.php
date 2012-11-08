@@ -82,7 +82,7 @@ class MainController extends AppController {
         $tweet = $consumer->post(
             $accessToken,
             $accessTokenSecret,
-            'http://twitter.com/statuses/update.xml',
+            'http://api.twitter.com/1/statuses/update.xml',
             array('status'=>'written by game_de_posit')
         );
  
