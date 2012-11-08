@@ -77,11 +77,11 @@ class MainController extends AppController {
         // Access Token Secret の値
         $accessTokenSecret = 'qr5LcobZlhFpK4oYpp67bIPNhJwIHwyFnPNxTs3oSQ';
 
-        $consumer = new OAuth_Consumer($this->consumerKey, $this->consumerSecret);
+        $consumer = new OAuth_Consumer($consumerKey, $consumerSecret);
 
         $tweet = $consumer->post(
-            $this->accessToken,
-            $this->accessTokenSecret,
+            $accessToken,
+            $accessTokenSecret,
             'http://twitter.com/statuses/update.xml',
             array('status'=>'written by game_de_posit')
         );
