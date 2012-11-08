@@ -20,6 +20,7 @@ class MainController extends AppController {
         $this->layout = 'gdp_layout';
         $title_for_layout = 'GameDePosit';
         $this->set(compact('title_for_layout','body_for_layout'));
+        App::import('Vendor', 'oauth', array('file' => 'OAuth'.DS.'oauth_consumer.php'));
     }
 
     function afterFilter(){
@@ -44,6 +45,24 @@ class MainController extends AppController {
     }
 
     function help(){
+    }
+
+    public function twitter() {
+        $consumer = $this->createConsumer();
+        $requestToken = $consumer->getRequestToken('http://twitter.com/oauth/request_token', 'http://localhost/_git_gdp/main/twitter_callback');
+        $this->Session->write('twitter_request_token', $requestToken);
+        $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
+    }
+
+    public function twitter_callback() {
+        $requestToken = $this->Session->read('twitter_request_token');
+        $consumer = $this->createConsumer();
+        $accessToken = $consumer->getAccessToken('http://twitter.com/oauth/access_token', $requestToken);
+        var_dump($consumer->post($accessToken->key, $accessToken->secret, 'http://twitter.com/statuses/update.json', array('status' => 'hello world from GameDePosit.app')));
+    }
+
+    private function createConsumer() {
+        return new OAuth_Consumer('lnaIBId9kLLKty23VZiaQ', '8GfCVAi1Ilrd47iNYPd3KzJHfPOOmtNRTu4yyRio');
     }
 
 }
