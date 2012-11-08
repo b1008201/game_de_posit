@@ -49,7 +49,7 @@ class MainController extends AppController {
 
     public function twitter() {
         $consumer = $this->createConsumer();
-        $requestToken = $consumer->getRequestToken('http://twitter.com/oauth/request_token', ' 	http://cjg00s8-ahv-app000.c4sa.net/main/twitter_callback');
+        $requestToken = $consumer->getRequestToken('http://twitter.com/oauth/request_token', 'http://cjg00s8-ahv-app000.c4sa.net/main/twitter_callback');
         $this->Session->write('twitter_request_token', $requestToken);
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
