@@ -340,7 +340,7 @@ window.onload = function() {
 		twlogo.y = 210;
 		
 		// Twitter連携用
-		twlogo.addEventListener("touchend", function() {
+		twlogo.addEventListener("touchstart", function() {
 			window.open("http://www.fun.ac.jp/");
 		});
 		
