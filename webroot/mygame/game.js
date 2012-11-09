@@ -9,28 +9,28 @@ window.onload = function() {
 	/* ゲーム全体の初期設定等 */
 	var game = new Game(320, 362);
 	game.fps = 15;
-	game.preload('map1.gif', 'chara0.gif', 'logo.png', 'tw.gif', 'face.gif');
+	game.preload('map1.gif', 'chara0.gif', 'gametop.gif', 'tw.gif', 'face.gif');
 	game.onload = function() {
 		/* ゲームスタート画面 */
 		var startScene = new Scene();
 
 		// タイトルロゴ
-		var logo = new Sprite(848, 136);
-		logo.image = game.assets['logo.png'];
-		logo.scaleX = 0.3;
-		logo.scaleY = 0.3;
-		logo.x = -270;
-		logo.y = 20;
+		var logo = new Sprite(320, 181);
+		logo.image = game.assets['gametop.gif'];
+//		logo.scaleX = 0.3;
+//		logo.scaleY = 0.3;
+		logo.x = 0;
+		logo.y = 10;
 
 		// スタートメニュー
 		var startLabel1 = new Label("　 はじめから");
 		startLabel1.x = 110;
-		startLabel1.y = 190;
+		startLabel1.y = 230;
 		startLabel1.color = 'gray';
 		startLabel1.opacity = 0.7;
 		var startLabel2 = new Label("▶ つづきから");
 		startLabel2.x = 110;
-		startLabel2.y = 220;
+		startLabel2.y = 260;
 		startLabel2.width = 80;
 
 		startLabel2.addEventListener("touchstart", function() {
