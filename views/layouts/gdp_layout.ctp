@@ -29,7 +29,6 @@
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'), array('class' => 'bland'));?>"><i class=icon-home></i></a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'maricolle'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i> </a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'communities', 'action' => 'index'), array('class' => 'bland'));?>"><i class="icon-user"></i> </a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'help'), array('class' => 'bland'));?>"><i class="icon-book"></i> </a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li><?php echo $html->link('Home', array('controller' => 'main', 'action' => 'home'));?></li>

@@ -27,6 +27,9 @@ class MainController extends AppController {
         parent::beforeFilter();
         $body_for_layout = '';//"leftmargin='0' topmargin='0' bgcolor='#ffffff' marginheight='0' marginwidth='0'";
     }
+    function _createConsumer() {
+        return new OAuth_Consumer('lnaIBId9kLLKty23VZiaQ', '8GfCVAi1Ilrd47iNYPd3KzJHfPOOmtNRTu4yyRio');
+    }
 
     /*
      *
@@ -47,23 +50,28 @@ class MainController extends AppController {
     function help(){
     }
 
-    public function twitter() {
-        $callbackUrl = 'http://'.env('HTTP_HOST').'/main/twitter_callback';
-        $consumer = $this->createConsumer();
+    function tweet() {
+        $callbackUrl = 'http://'.env('HTTP_HOST').'/main/tweet_callback';
+        $consumer = $this->_createConsumer();
         $requestToken = $consumer->getRequestToken('http://api.twitter.com/oauth/request_token', $callbackUrl);
         $this->Session->write('twitter_request_token', $requestToken);
         $this->redirect('http://api.twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
 
-    public function twitter_callback() {
+    function tweet_callback() {
+        if(!empty($this->params['url']['comment']))
+            $comment = $this->params['url']['comment'];
+        else
+            $comment = 'Hello world!';
+        $comment .= ' written by GameDePosit';
+        
         $requestToken = $this->Session->read('twitter_request_token');
-        $consumer = $this->createConsumer();
+        $consumer = $this->_createConsumer();
         $accessToken = $consumer->getAccessToken('http://api.twitter.com/oauth/access_token', $requestToken);
-        $tweet = $consumer->post($accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/statuses/update.json', array('status' => 'hello world! written by GameDePosit.app'));
+        $tweet = $consumer->post($accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/statuses/update.json', array('status' => $comment));
+        
     }
 
-    private function createConsumer() {
-        return new OAuth_Consumer('lnaIBId9kLLKty23VZiaQ', '8GfCVAi1Ilrd47iNYPd3KzJHfPOOmtNRTu4yyRio');
-    }
+
 
 }
