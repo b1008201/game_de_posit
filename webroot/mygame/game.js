@@ -341,7 +341,7 @@ window.onload = function() {
 		
 		// Twitter連携用
 		twlogo.addEventListener("touchstart", function() {
-			window.open("http://www.fun.ac.jp/");
+			window.open("http://cltpfqq-as4-app000.c4sa.net/main/tweet");
 		});
 		
 		var fblogo = new Sprite(35, 35);
