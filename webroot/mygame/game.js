@@ -301,11 +301,11 @@ window.onload = function() {
 //		}
 
 		// 台詞ウィンドウ
-		var window = new Sprite(220, 60);
-		window.x = 50;
-		window.y = 206;
-		window.backgroundColor = 'black';
-		window.visible = false;
+		var swindow = new Sprite(220, 60);
+		swindow.x = 50;
+		swindow.y = 206;
+		swindow.backgroundColor = 'black';
+		swindow.visible = false;
 
 		// 台詞ラベル
 		var serifuLabel = new Label("");
@@ -338,6 +338,11 @@ window.onload = function() {
 		twlogo.scaleY = 0.55;
 		twlogo.x = 210;
 		twlogo.y = 210;
+		
+		// Twitter連携用
+		twlogo.addEventListener("touchend", function() {
+			window.open("http://www.fun.ac.jp/");
+		});
 		
 		var fblogo = new Sprite(35, 35);
 		fblogo.image = game.assets['face.gif'];
@@ -373,7 +378,7 @@ window.onload = function() {
 			if(dep == 0) {
 				s++;
 				dep++;
-				mura3Conv(serifuLabel, window, yes, no, mainScene);
+				mura3Conv(serifuLabel, swindow, yes, no, mainScene);
 			} else {
 				dep++;
 				mainScene.removeChild(yes);
@@ -397,7 +402,7 @@ window.onload = function() {
 			sentaku = 0;
 			mainScene.removeChild(yes);
 			mainScene.removeChild(no);
-			mura3Conv(serifuLabel, window, yes, no, mainScene);
+			mura3Conv(serifuLabel, swindow, yes, no, mainScene);
 		};
 		
 		// デポジット画面のOKボタンの処理
@@ -411,7 +416,7 @@ window.onload = function() {
 			sentaku = 0;
 			s = 0;
 			map.collisionData[2][7] = 0;
-			mura3Conv(serifuLabel, window, yes, no, mainScene);
+			mura3Conv(serifuLabel, swindow, yes, no, mainScene);
 		};
 
 		// マップ，人をゲーム画面に追加
@@ -429,7 +434,7 @@ window.onload = function() {
 //		}
 		stage.addChild(foregroundMap);
 		mainScene.addChild(stage);
-		mainScene.addChild(window);
+		mainScene.addChild(swindow);
 		mainScene.addChild(serifuLabel);
 
 		// 操作パネルの準備		
@@ -452,17 +457,17 @@ window.onload = function() {
 		// はなす/しらべるボタンを押したときの処理
 		button.onenter = function() {
 			if(player.intersect(mura1_) && player.direction == 3) {
-				mura1Conv(serifuLabel, window);
+				mura1Conv(serifuLabel, swindow);
 			} else if(player.intersect(mura2) && player.direction == 3) {
-				mura2Conv(serifuLabel, window);
+				mura2Conv(serifuLabel, swindow);
 			} else if(player.intersect(mura3) && (player.direction == 2 || player.direction == 3)) {
-				mura3Conv(serifuLabel, window, yes, no, mainScene);
+				mura3Conv(serifuLabel, swindow, yes, no, mainScene);
 			} else if(player.intersect(mura4)) {
-				mura4Conv(serifuLabel, window);
+				mura4Conv(serifuLabel, swindow);
 			} else if(player.intersect(mura1)) {
-				mura1Conv2(serifuLabel, window);
+				mura1Conv2(serifuLabel, swindow);
 			}else if(player.intersect(fuda) && player.direction == 3) {
-				fudaCheck(serifuLabel, window);
+				fudaCheck(serifuLabel, swindow);
 			} else {
 //				for(var i = 0; i < tsubo.length; i++) {
 //				if(player.intersect(tsubo[i])) {
@@ -470,13 +475,13 @@ window.onload = function() {
 //				return;
 //				}
 //				}
-				nashiCheck(serifuLabel, window);
+				nashiCheck(serifuLabel, swindow);
 			}
 		};
 		mainScene.addEventListener(button);
 
 		// 会話時はウィンドウクリックで会話が進むように設定
-		window.addEventListener("touchend", function() {
+		swindow.addEventListener("touchend", function() {
 			if(kaiwa == 1 && sentaku == 0) {
 				var e = new enchant.Event("enter");
 				button.dispatchEvent(e);
@@ -580,17 +585,17 @@ var mura2Flag = 0;
 /*
  * 村人Aとの会話
  */
-function mura1Conv(label, window) {
+function mura1Conv(label, swindow) {
 	if(s == 0) {
 		kaiwa = 1;
-		window.visible = true;
+		swindow.visible = true;
 		label.text = mura1_s[s] + " ▼";
 		s++;
 	} else if(s < mura1_s.length){
 		label.text = mura1_s[s] + ((mura1_s.length > s + 1) ? "▼" : "");
 		s++;
 	} else {
-		window.visible = false;
+		swindow.visible = false;
 		label.text = "";
 		s = 0;
 		kaiwa = 0;
@@ -601,17 +606,17 @@ function mura1Conv(label, window) {
 /*
  * 村人Aとの会話その2
  */
-function mura1Conv2(label, window) {
+function mura1Conv2(label, swindow) {
 	if(s == 0) {
 		kaiwa = 1;
-		window.visible = true;
+		swindow.visible = true;
 		label.text = mura1_s2[s] + " ▼";
 		s++;
 	} else if(s < mura1_s2.length){
 		label.text = mura1_s2[s] + ((mura1_s2.length > s + 1) ? "▼" : "");
 		s++;
 	} else {
-		window.visible = false;
+		swindow.visible = false;
 		label.text = "";
 		s = 0;
 		kaiwa = 0;
@@ -621,15 +626,15 @@ function mura1Conv2(label, window) {
 /*
  * 村人Bとの会話
  */
-function mura2Conv(label, window) {
+function mura2Conv(label, swindow) {
 	if(mura2Flag == 0) {
 		if(s == 0) {
 			kaiwa = 1;
-			window.visible = true;
+			swindow.visible = true;
 			label.text = mura2_s2[s];
 			s++;
 		} else {
-			window.visible = false;
+			swindow.visible = false;
 			label.text = "";
 			s = 0;
 			kaiwa = 0;
@@ -637,14 +642,14 @@ function mura2Conv(label, window) {
 	} else {
 		if(s == 0) {
 			kaiwa = 1;
-			window.visible = true;
+			swindow.visible = true;
 			label.text = mura2_s[s] + " ▼";
 			s++;
 		} else if(s < mura2_s.length){
 			label.text = mura2_s[s] + ((mura2_s.length > s + 1) ? "▼" : "");
 			s++;
 		} else {
-			window.visible = false;
+			swindow.visible = false;
 			label.text = "";
 			s = 0;
 			kaiwa = 0;
@@ -655,11 +660,11 @@ function mura2Conv(label, window) {
 /*
  * 村人Cとの会話
  */
-function mura3Conv(label, window, yes, no, mainScene) {
+function mura3Conv(label, swindow, yes, no, mainScene) {
 	if(dep < 2) {
 		if(s == 0) {
 			kaiwa = 1;
-			window.visible = true;
+			swindow.visible = true;
 			label.text = mura3_s[s] + " ▼";
 			s++;
 		}else if(s == 1) {
@@ -673,7 +678,7 @@ function mura3Conv(label, window, yes, no, mainScene) {
 			label.text = mura3_s[s];
 			s++;
 		} else {
-			window.visible = false;
+			swindow.visible = false;
 			label.text = "";
 			s = 0;
 			kaiwa = 0;
@@ -681,14 +686,14 @@ function mura3Conv(label, window, yes, no, mainScene) {
 	} else {
 		if(s == 0) {
 			kaiwa = 1;
-			window.visible = true;
+			swindow.visible = true;
 			label.text = mura3_s2[s] + " ▼";
 			s++;
 		} else if(s < mura3_s2.length){
 			label.text = mura3_s2[s] + ((mura3_s2.length > s + 1) ? "▼" : "");
 			s++;
 		} else {
-			window.visible = false;
+			swindow.visible = false;
 			label.text = "";
 			s = 0;
 			kaiwa = 0;
@@ -699,17 +704,17 @@ function mura3Conv(label, window, yes, no, mainScene) {
 /*
  * 村人Dとの会話
  */
-function mura4Conv(label, window) {
+function mura4Conv(label, swindow) {
 	if(s == 0) {
 		kaiwa = 1;
-		window.visible = true;
+		swindow.visible = true;
 		label.text = mura4_s[s] + " ▼";
 		s++;
 	} else if(s < mura4_s.length){
 		label.text = mura4_s[s] + ((mura4_s.length > s + 1) ? "▼" : "");
 		s++;
 	} else {
-		window.visible = false;
+		swindow.visible = false;
 		label.text = "";
 		s = 0;
 		kaiwa = 0;
@@ -719,14 +724,14 @@ function mura4Conv(label, window) {
 /*
  * 立て札を調べたとき
  */
-function fudaCheck(label, window) {
+function fudaCheck(label, swindow) {
 	if(s == 0) {
 		kaiwa = 1;
-		window.visible = true;
+		swindow.visible = true;
 		label.text = fuda_s[s];
 		s++;
 	} else {
-		window.visible = false;
+		swindow.visible = false;
 		label.text = "";
 		s = 0;
 		kaiwa = 0;
@@ -743,17 +748,17 @@ function tsuboCheck(i) {
 /*
  * 何もないとき
  */
-function nashiCheck(label, window) {
+function nashiCheck(label, swindow) {
 	if(s == 0) {
 		kaiwa = 1;
-		window.visible = true;
+		swindow.visible = true;
 		label.text = nashi[s] + " ▼";
 		s++;
 	} else if(s < nashi.length){
 		label.text = nashi[s] + ((nashi.length > s + 1) ? "▼" : "");
 		s++;
 	} else {
-		window.visible = false;
+		swindow.visible = false;
 		label.text = "";
 		s = 0;
 		kaiwa = 0;
