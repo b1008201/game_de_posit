@@ -37,23 +37,13 @@ $this->redirect("/communities/bbs");
 }
 
 
-
 $this->paginate = Array(
 		'limit' => 10,
 		'order' => array('Community.created' => 'desc'
 		));
 $this->set('all_bbs', $this->paginate());
 
-/*
-$bbs = $this->Community->pagenate('all', array(
-		'limit' => 10,
-		'order' => array('Community.created' => 'desc')
-		));
 
-if(!empty($bbs)){
-$this->set("all_bbs", $this->paginate($bbs));
-}
-*/
 
 }
 

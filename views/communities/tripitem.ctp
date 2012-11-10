@@ -47,7 +47,7 @@
 ?>
 </div>
 <div>
-<font size=3>USJ<br>名鉄観光サービス 株式会社<br>￥27,700</font>
+<font size=3>名鉄観光サービス 株式会社<br>USJ<br>￥27,700</font>
 </div>
 </div>
     </li>
