@@ -1,8 +1,14 @@
    <div class="container">
-        <div class="page-header">
-        <h3>楽器</h3>
-    	</div>           
-    <ul class="thumbnails">
+<br>
+<br>
+
+   <ul class="breadcrumb">
+		<li><a href="http://localhost/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
+		<li class="active">楽器</li>
+   </ul>
+   
+  
+   <ul class="thumbnails">
 		<li class="span9">
     		<div class="thumbnail">
 				<div style= "float:left;">
@@ -53,12 +59,7 @@
 </div>
     </li>
   </ul>
-      <ul class="pager">
-<li class="previous">
-<?php echo $html->link("戻る", $referer); ?>
-</li>
-  </ul>
-   
+	<?php echo $html->link("戻る", $referer, array('class'=>'btn btn-large disabled')); ?>
  </div>
    
    
