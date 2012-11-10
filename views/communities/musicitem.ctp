@@ -1,6 +1,3 @@
-
-	<div style="min-height: 10px"></div>
-
 	<div class="container">
 	   <ul class="breadcrumb">
 			<li><a href="http://localhost/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>

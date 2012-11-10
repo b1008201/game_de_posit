@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div style="min-height: 45px"></div>
+    <div style="min-height: 55px"></div>
     <?php echo $content_for_layout; ?>
 
     <?php

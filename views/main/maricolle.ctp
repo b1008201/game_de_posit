@@ -1,5 +1,4 @@
 <div align="center">
-<div style="min-height: 10px"></div>
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
         <div class="item active">
