@@ -18,13 +18,11 @@
 
 
 	<?php foreach ($all_bbs as $bbs) { ?>
-  f  	<ul class="thumbnails">
+    	<ul class="thumbnails">
     		<li class="span2">
-    			<div class="thumbnail">
     			    <table class="table table-bordered">
-    			        <td><?php echo h($bbs["Community"]["comment"]); ?></td><td><?php echo h($bbs["Community"]["username"]); ?></td>
+    			        <td><?php echo h($bbs["Community"]["username"]); ?></td><td><?php echo h($bbs["Community"]["comment"]); ?></td>
     			    </table>
-				</div>
 			</li>
 		</ul>
 	<?php	}?>
