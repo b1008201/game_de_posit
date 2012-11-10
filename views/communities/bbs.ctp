@@ -34,7 +34,7 @@
 		    <ul>
     <?php	
         echo $paginator->prev(__('前へ', true), array('tag' => 'li'));
-        echo $paginator->numbers( array('tag' => 'li', 'separator' => null, 'modulus' => 11) );
+        echo $paginator->numbers( array('tag' => 'li', 'separator' => null, 'before'=>'<a>','after'=>'</a>','modulus' => 5) );
         echo $paginator->next(__('次へ', true), array('tag' => 'li')); 
     ?>
             </ul>
