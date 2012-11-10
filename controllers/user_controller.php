@@ -13,8 +13,17 @@ class UserController extends AppController {
 
     var $name = 'User';
     var $helpers = array('Html', 'Session');
-    var $uses = array();
+    var $uses = array('Good');
 
+    function beforeFilter() {
+    	parent::beforeFilter();
+//    	$this->layout = 'gdp_user_layout';
+    	$title_for_layout = 'GameDEPosit';
+    	$this->set(compact('title_for_layout','body_for_layout'));
+    }
+    
     function index() {
+    	$data = $this->Good->find('all', array('fields' => array('Good.name', 'Good.price', 'Good.image')));
+    	$this->set('data', $data);
     }
 }
