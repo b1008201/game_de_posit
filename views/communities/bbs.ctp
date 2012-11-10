@@ -12,7 +12,7 @@
 	echo $form->create("Community", array("action" => "bbs" ));
 	echo $form->textarea("Community.comment",array("maxLength" => "140" ,"rows" => "4")); 
 	echo $form->input("Community.username"); 
-	echo $form->submit('送信', array('class'=>'btn btn-primary'));
+	echo $form->submit('送信', array('class'=>'btn btn-primary','value'=>'hABeO'));
 	echo $form->end();
 	?>
 
