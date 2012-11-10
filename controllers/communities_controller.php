@@ -41,7 +41,6 @@ class CommunitiesController extends AppController{
         $this->paginate = array(
                 'limit' => 5,
                 'order' => array('Community.created' => 'desc'),
-                'Community'=>array('Community.comment'),
                 );
         $this->set('all_bbs', $this->paginate());
     }
