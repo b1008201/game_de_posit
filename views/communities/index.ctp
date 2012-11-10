@@ -20,7 +20,8 @@
 			    	)); ?>
 				<?php echo $this->Html->image("icon/icon04.gif", array(
 			    	"alt" => "trip",'width' => '100px', 'height' => '100px',
-					'style'=>"margin:4px;"	
+					'url' => array('controller' => 'communities', 'action' => 'tripitem'),	
+					'style'=>"margin:4px;"
 					)); ?>
 				</div>
 			</div>
