@@ -1,8 +1,4 @@
-
-<div style="min-height: 10px"></div>
-
 <?php echo $html->css("community.css", "stylesheet"); ?>
-
      <div class="container">
     	<div class="row">
         	<div class="span9">
