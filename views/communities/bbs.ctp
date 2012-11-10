@@ -1,10 +1,12 @@
 
 
-<div class="page-header">
-		<h2>アルトサクソフォン</h2>
-	</div>
-
-<div class="row">
+	   <ul class="breadcrumb">
+			<li><a href="http://localhost/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
+			<li><a href="http://localhost/communities/musicitem">楽器</a> <span class="divider">/</span></li>
+			<li class="active">アルトサクソフォン</li>
+	   </ul>
+	   
+	<div class="row">
     <div class="span9">
 	<?php
 	$bbs=array();
