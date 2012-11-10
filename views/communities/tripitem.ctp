@@ -1,8 +1,13 @@
-   <div class="container">
-        <div class="page-header">
-        <h3>旅行</h3>
-    	</div>           
-    <ul class="thumbnails">
+
+	<div style="min-height: 10px"></div>
+
+	<div class="container">
+	   <ul class="breadcrumb">
+			<li><a href="http://localhost/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
+			<li class="active">旅行</li>
+	   </ul>
+   
+  	   <ul class="thumbnails">
 		<li class="span9">
     		<div class="thumbnail">
 				<div style= "float:left;">
@@ -23,39 +28,34 @@
 				?>
 			</div>
 			<div>
-<font size=3>株式会社 ビーウェーブ<br>東京ディズニーリゾート<br>￥25,200</font>
-</div>
-</div>
-    </li>
-   <li class="span9">
-    <div class="thumbnail">
-<div style= "float:left;">
-<?php echo $this->Html->image("trip/okinawa.gif", array(
-    "alt" => "base",'width' => '64px', 'height' => '64px'))
-?>
-</div>
-<div>
-<font size=3>株式会社 アバンティリゾートクラブ<br>那覇・首里<br>￥82,000</font>
-</div>
-</div>
-    </li>
-   <li class="span9">
-    <div class="thumbnail">
-<div style= "float:left;">
-<?php echo $this->Html->image("trip/usj.gif", array(
-    "alt" => "music",'width' => '64px', 'height' => '64px'))
-?>
-</div>
-<div>
-<font size=3>名鉄観光サービス 株式会社<br>USJ<br>￥27,700</font>
-</div>
-</div>
-    </li>
-  </ul>
-      <ul class="pager">
-<li class="previous">
-<?php echo $html->link("戻る", $referer); ?>
-</li>
-  </ul>
-   
+			<font size=3>株式会社 ビーウェーブ<br>東京ディズニーリゾート<br>￥25,200</font>
+			</div>
+			</div>
+		</li>
+		<li class="span9">
+			<div class="thumbnail">
+			<div style= "float:left;">
+				<?php echo $this->Html->image("trip/okinawa.gif", array(
+			    "alt" => "base",'width' => '64px', 'height' => '64px'))
+				?>
+			</div>
+			<div>
+			<font size=3>株式会社 アバンティリゾートクラブ<br>那覇・首里<br>￥82,000</font>
+			</div>
+			</div>
+		</li>
+		<li class="span9">
+			    <div class="thumbnail">
+			<div style= "float:left;">
+			<?php echo $this->Html->image("trip/usj.gif", array(
+			    "alt" => "music",'width' => '64px', 'height' => '64px'))
+			?>
+			</div>
+			<div>
+			<font size=3>名鉄観光サービス 株式会社<br>USJ<br>￥27,700</font>
+			</div>
+			</div>
+		</li>
+	</ul>
+	<?php echo $html->link("戻る", $referer, array('class'=>'btn btn-large disabled')); ?>   
  </div>
