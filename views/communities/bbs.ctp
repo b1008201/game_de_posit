@@ -30,14 +30,12 @@
 
 <div class="row">
     <div class="span9">
-		<div align="center">
+		<div class="pagination">
     <?php	
-		echo $paginator->prev('< '.__('前へ', true), array(), null, array('class'=>'disabled' )) . ' | '.
-	$paginator->numbers().
-	' | '.
-	$paginator->next(__('次へ', true).' >', array(), null, array
-	('class'=>'disabled' )); 
-	?>
+        echo $paginator->prev(__('前へ', true), array(), null, array('class'=>'disabled' ));
+        echo $paginator->numbers();
+        echo $paginator->next(__('次へ', true), array(), null, array('class'=>'disabled' )); 
+    ?>
 		</div>
 	</div>
 </div>
