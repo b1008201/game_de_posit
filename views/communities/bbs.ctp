@@ -18,10 +18,12 @@
 
 
 	<?php foreach ($all_bbs as $bbs) { ?>
-    	<ul class="thumbnails">
+  f  	<ul class="thumbnails">
     		<li class="span2">
     			<div class="thumbnail">
-					<?php echo h($bbs["Community"]["comment"]); ?>
+    			    <table class="table table-bordered">
+    			        <td><?php echo h($bbs["Community"]["comment"]); ?></td><td><?php echo h($bbs["Community"]["username"]); ?></td>
+    			    </table>
 				</div>
 			</li>
 		</ul>
