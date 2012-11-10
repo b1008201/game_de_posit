@@ -31,6 +31,7 @@ function bbs() {
 if (($this->data)!=NULL) {
 if($this->data["Community"]["comment"]!=NUll){
 $comment["Community"]["comment"] = $this->data["Community"]["comment"];
+$comment["Community"]["username"] = $this->data["Community"]["username"];
 $this->Community->save($comment);
 $this->redirect("/communities/bbs");
 }
