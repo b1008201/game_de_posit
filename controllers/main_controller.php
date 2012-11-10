@@ -50,7 +50,7 @@ class MainController extends AppController {
     function help(){
     }
 
-    function tweet() {
+    function tweet(){
         $callbackUrl = 'http://'.env('HTTP_HOST').'/main/tweet_callback';
         $consumer = $this->_createConsumer();
         $requestToken = $consumer->getRequestToken('http://api.twitter.com/oauth/request_token', $callbackUrl);
@@ -58,20 +58,26 @@ class MainController extends AppController {
         $this->redirect('http://api.twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
 
-    function tweet_callback() {
-        if(!empty($this->params['url']['comment']))
-            $comment = $this->params['url']['comment'];
-        else
-            $comment = 'Hello world!';
-        $comment .= ' written by GameDePosit';
-        
-        $requestToken = $this->Session->read('twitter_request_token');
-        $consumer = $this->_createConsumer();
-        $accessToken = $consumer->getAccessToken('http://api.twitter.com/oauth/access_token', $requestToken);
-        $tweet = $consumer->post($accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/statuses/update.json', array('status' => $comment));
-        
+    function tweet_callback(){
+        if(!empty($this->data)){
+            if(!empty($this->data['message'])){
+                $comment = $this->data['message']." #GameDEPosit";
+                $requestToken = $this->Session->read('twitter_request_token');
+                $consumer = $this->_createConsumer();
+                $accessToken = $consumer->getAccessToken('http://api.twitter.com/oauth/access_token', $requestToken);
+                $tweet = $consumer->post($accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/statuses/update.json', array('status' => $comment));
+                $results['message'] = '投稿しました．';
+                $results['div'] = 'control-group success';
+                $results['input'] = 'inputSuccess';
+                echo "<!--";var_dump($tweet);echo"-->";
+            }else{
+                $results['message'] = 'コメントを入力して下さい．';
+                $results['div'] = 'control-group error';
+                $results['input'] = 'inputError';
+            }
+            $this->set('results',$results);
+        }else{
+
+        }
     }
-
-
-
 }
