@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
             echo $html->css("bootstrap.min.css", "stylesheet");
-            echo '<style type="text/css">body {padding-bottom: 40px; text-align: center;} </style>';
+            echo '<style type="text/css">body {padding-bottom: 40px;} </style>';
             echo $html->css("bootstrap-responsive.min.css", "stylesheet");
             echo $scripts_for_layout;
             echo '<style type="text/css">.navbar-fixed-top{position: fixed;} .brand [class^="icon-"], .brand [class*=" icon-"]{background-image: url("/img/glyphicons-halflings-white.png"); margin-top: 5px;}</style>';

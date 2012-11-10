@@ -1,3 +1,4 @@
+<div align="center">
 <div style="min-height: 10px"></div>
 <section id="help">
     <div class="container">
@@ -8,3 +9,4 @@
         </div>
     </div>
 </section>
+</div>

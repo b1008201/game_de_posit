@@ -1,3 +1,4 @@
+<div align="center">
 <section id="help">
     <div class="container">
         <div class="row">
@@ -13,3 +14,4 @@
         </div>
     </div>
 </section>
+</div>
