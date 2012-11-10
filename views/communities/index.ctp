@@ -32,5 +32,16 @@
 	            )); ?>
 				</div>
             </div>
+                        <div class="span9">
+				<div align="center"> 
+               <?php echo $this->Html->image("icon/icon05.gif", array(
+				     "alt" => "car",'width' => '100px', 'height' => '100px',
+	            		)); ?>
+	            <?php echo $this->Html->image("icon/icon06.gif", array(
+				    "alt" => "pc",'width' => '100px', 'height' => '100px',
+	            	'style'=>"margin:4px;"
+	            )); ?>
+				</div>
+            </div>
     </div> 
 </div>   
