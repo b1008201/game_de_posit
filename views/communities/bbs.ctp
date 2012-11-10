@@ -18,12 +18,15 @@
 	echo $form->end();
 	?>
 
-
+	<?php var_dump($all_bbs)?>
 	<?php foreach ($all_bbs as $bbs) { ?>
     	<ul class="thumbnails">
     		<li class="span2">
     			    <table class="table table-bordered">
-    			        <td><?php echo h($bbs["Community"]["username"]); ?></td><td><?php echo h($bbs["Community"]["comment"]); ?></td>
+    			        <tr>
+    			            <td><?php echo h($bbs["Community"]["username"]); ?></td>
+    			            <td><?php echo h($bbs["Community"]["comment"]); ?></td>
+    			        </tr>
     			    </table>
 			</li>
 		</ul>
