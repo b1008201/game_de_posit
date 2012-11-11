@@ -18,7 +18,7 @@ class MainController extends AppController {
     function beforeFilter() {
         parent::beforeFilter();
         $this->layout = 'gdp_layout';
-        $title_for_layout = 'GameDePosit';
+        $title_for_layout = 'GameDEPosit';
         $this->set(compact('title_for_layout','body_for_layout'));
         App::import('Vendor', 'oauth', array('file' => 'OAuth'.DS.'oauth_consumer.php'));
     }
