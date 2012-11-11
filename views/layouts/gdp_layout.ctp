@@ -35,6 +35,7 @@
                         <li><?php echo $html->link('Game', array('controller' => 'main', 'action' => 'maricolle'));?></li>
                         <li><?php echo $html->link('Community', array('controller' => 'communities', 'action' => 'index'));?></li>
                         <li><?php echo $html->link('Tweet', array('controller' => 'main', 'action' => 'tweet'));?></li>
+                        <li><?php echo $html->link('User', array('controller' => 'user', 'action' => 'index'));?></li>
                         <li><?php echo $html->link('Help', array('controller' => 'main', 'action' => 'help'));?></li>
                     </ul>
                 </div>
