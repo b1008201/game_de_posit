@@ -95,17 +95,23 @@ class DATABASE_CONFIG {
 		'encoding' => 'utf8',
 	);
 	
-	function __construct()
-	{
-		$this->default['host'] = getenv('C4SA_MYSQL_HOST');
-		$this->default['login'] = getenv('C4SA_MYSQL_USER');
-		$this->default['password'] = getenv('C4SA_MYSQL_PASSWORD');
-		$this->default['database'] = getenv('C4SA_MYSQL_DB');
+	function __construct(){
+	    if (!preg_match("/localhost/i", env('HTTP_HOST'))) {
+	        $this->default['host'] = getenv('C4SA_MYSQL_HOST');
+	        $this->default['login'] = getenv('C4SA_MYSQL_USER');
+	        $this->default['password'] = getenv('C4SA_MYSQL_PASSWORD');
+	        $this->default['database'] = getenv('C4SA_MYSQL_DB');
 
-		$this->test['host'] = getenv('C4SA_MYSQL_HOST');
-		$this->test['login'] = getenv('C4SA_MYSQL_USER');
-		$this->test['password'] = getenv('C4SA_MYSQL_PASSWORD');
-		$this->test['database'] = getenv('C4SA_MYSQL_DB');
+	        $this->test['host'] = getenv('C4SA_MYSQL_HOST');
+	        $this->test['login'] = getenv('C4SA_MYSQL_USER');
+	        $this->test['password'] = getenv('C4SA_MYSQL_PASSWORD');
+	        $this->test['database'] = getenv('C4SA_MYSQL_DB');
+	    } else {
+	        $this->default['host'] = "localhost";
+	        $this->default['login'] = "gdp";
+	        $this->default['password'] = "gdp";
+	        $this->default['database'] = "gdp";
+	    }
 	}
 	
 }
