@@ -25,6 +25,5 @@ class UserController extends AppController {
     function index() {
     	$data = $this->Good->find('all', array('fields' => array('Good.name', 'Good.price', 'Good.image')));
     	$this->set('data', $data);
-    	$this->Session->write('username', 'hABe');
     }
 }

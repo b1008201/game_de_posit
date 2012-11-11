@@ -67,7 +67,7 @@ $j_prices = json_encode($prices);
 	echo "何ヶ月で貯金を達成したいですか？<br />";
 	echo $form->input('User.target-span',array('label'=>false,
 			'type' => 'select',
-			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月'),
+			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月', '5'=>'5ヶ月','6'=>'6ヶ月', '7'=>'7ヶ月','8'=>'8ヶ月'),
 			'selected' => '3',
 			 ));
 	echo $form->submit('登録',array('class'=>'btn btn-primary'));

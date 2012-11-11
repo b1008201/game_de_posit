@@ -1,6 +1,6 @@
         <?php
              $value =$this->Session->read('User.name');
-             if(isset($value)){
+             if(isset($value)&&!empty($value)){
                  echo "<ul class='breadcrumb'>";
                  echo $value.'さんログイン中';
                  echo "</ul>";
@@ -19,7 +19,7 @@
 </section>
 </div>
          <?php
-             if(isset($value)){
+             if(isset($value)&&!empty($value)){
                  echo "<ul class='breadcrumb'>";
                  echo '目標商品: '.$this->Session->read('User.target-item')."<br>";
                  echo '目標金額: '.$this->Session->read('User.target-price')."円<br>";

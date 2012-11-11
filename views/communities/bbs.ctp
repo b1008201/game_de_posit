@@ -3,7 +3,7 @@
 	   <ul class="breadcrumb">
 			<li><a href="/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
 			<li><a href="/communities/musicitem">楽器</a> <span class="divider">/</span></li>
-			<li class="active">アルトサクソフォン</li>
+			<li class="active">RGX SERIES RGXA2 [WAG]</li>
 	   </ul>
     <div class="span9">	   
     <div class="hero-unit" style="padding: 20px;">
