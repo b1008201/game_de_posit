@@ -10,7 +10,6 @@ foreach($data as $good) {
 $j_goods = json_encode($goods);
 $j_prices = json_encode($prices);
 ?>
-<html>
 <head>
 <title>ユーザ登録</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,26 +48,57 @@ $j_prices = json_encode($prices);
 	</script>
 </head>
 <body>
-	<h3>Welcome to Game DE Posit!</h3>
-	<br /> 目標を設定して，さっそく貯金を始めましょう！
+	<legend>Welcome to Game DE Posit!</legend>
+	目標を設定して貯金を始めましょう！
 	<br /><br />
 	<?php
+	$user_name = $this->Session->read('User.name');
+	if(!empty($user_name)){
+    $user_gender = $this->Session->read('User.gender');
+    $user_age = $this->Session->read('User.age');
+    $user_target_item = $this->Session->read('User.target-item');
+    $user_target_price = $this->Session->read('User.target-price');
+    $user_target_span = $this->Session->read('User.target-span');
+	}
+	
+
 	echo $form->create(null, array('url' => '/main/'));
-	echo $form->input('User.name',array('label'=>false, 'type'=>'text', 'placeholder'=>'名前'), array('size' => '40'));
-	echo $form->select('User.gender', array('male' => '男性', 'female' => '女性'), null, array('empty' => '性別')) . '<br />';
-	echo $form->input('User.age',array('label'=>false, 'type'=>'text','placeholder'=>'年齢'));
-	echo $form->input('User.target-item',array('label'=>false, 'id' => 'tgt', 'placeholder'=>'目標商品'));
-	?>
-	<select id="goods">
-	<option value="empty">未選択</option>
-	</select>
-	<?php
-	echo $form->input('User.target-price',array('label'=>false, 'id' => 'prc', 'placeholder'=>'目標金額'));
-	echo "何ヶ月で貯金を達成したいですか？<br />";
-	echo $form->input('User.target-span',array('label'=>false,
+	if(!empty($user_name))
+	    echo $form->input('User.name',array('label'=>false, 'type'=>'text', 'placeholder'=>'名前', 'value'=>$user_name));
+	else
+	    echo $form->input('User.name',array('label'=>false, 'type'=>'text', 'placeholder'=>'名前'));
+	if(!empty($user_gender))
+	    echo $form->input('User.gender', array('label'=>false, 'type'=>'select', 'selected'=>$user_gender, 'options'=>array('male' => '男性', 'female' => '女性'), 'empty'=>'性別'));
+	else
+	    echo $form->input('User.gender', array('label'=>false, 'type'=>'select', 'options'=>array('male' => '男性', 'female' => '女性'), 'empty'=>'性別'));
+	if(!empty($user_age))
+	    echo $form->input('User.age',array('label'=>false, 'type'=>'text','placeholder'=>'年齢', 'value'=>$user_age));
+	else
+	    echo $form->input('User.age',array('label'=>false, 'type'=>'text','placeholder'=>'年齢'));
+	if(!empty($user_target_item))
+	    echo $form->input('User.target-item',array('label'=>false, 'id' => 'tgt', 'placeholder'=>'目標商品', 'value'=>$user_target_item));
+	else
+	    echo $form->input('User.target-item',array('label'=>false, 'id' => 'tgt', 'placeholder'=>'目標商品'));
+	echo"
+	<select id='goods'>
+	<option value='empty'>検索候補</option>
+	</select>";
+	if(!empty($user_target_price))
+	    echo $form->input('User.target-price',array('label'=>false, 'id' => 'prc', 'placeholder'=>'目標金額', 'value'=>$user_target_price));
+	else
+	    echo $form->input('User.target-price',array('label'=>false, 'id' => 'prc', 'placeholder'=>'目標金額'));
+	if(!empty($user_target_span))
+	    echo $form->input('User.target-span',array('label'=>false,
 			'type' => 'select',
 			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月', '5'=>'5ヶ月','6'=>'6ヶ月', '7'=>'7ヶ月','8'=>'8ヶ月'),
-			'selected' => '3',
+			'selected' => $user_target_span,
+            'empty' =>'何ヶ月で達成したいですか？'
+			 ));
+	else
+	    echo $form->input('User.target-span',array('label'=>false,
+			'type' => 'select',
+			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月', '5'=>'5ヶ月','6'=>'6ヶ月', '7'=>'7ヶ月','8'=>'8ヶ月'),
+            'empty' =>'何ヶ月で達成したいですか？'
 			 ));
 	echo $form->submit('登録',array('class'=>'btn btn-primary'));
 	echo $form->end();

@@ -17,7 +17,12 @@ class UserController extends AppController {
 
     function beforeFilter() {
     	parent::beforeFilter();
-    	$this->layout = 'gdp_user_layout';
+    	
+    	$user_name = $this->Session->read('User.name');
+    	if(!empty($user_name))
+    	    $this->layout = 'gdp_layout';
+    	else
+    	    $this->layout = 'gdp_user_layout';
     	$title_for_layout = 'GameDEPosit';
     	$this->set(compact('title_for_layout','body_for_layout'));
     }

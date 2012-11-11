@@ -22,6 +22,7 @@ class MainController extends AppController {
         if(isset($this->data['User'])){
             if(!empty($this->data['User'])){
                 $this->Session->write('User.name', $this->data['User']['name']);
+                $this->Session->write('User.gender', $this->data['User']['gender']);
                 $this->Session->write('User.age', $this->data['User']['age']);
                 $this->Session->write('User.target-item', $this->data['User']['target-item']);
                 $this->Session->write('User.target-price', $this->data['User']['target-price']);

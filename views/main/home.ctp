@@ -14,9 +14,9 @@
             <div class="span9">
             <?php
                 if(isset($value)&&!empty($value))
-                    echo '<img src="/img/app_top.gif" style="max-width:65%">';
+                    echo '<img src="/img/app_top.gif" style="max-width:65%"><br>';
                 else
-                    echo '<img src="/img/app_top.gif">';
+                    echo '<img src="/img/app_top.gif"><br>'.$html->link('→ユーザ登録ページへ', array('controller' => 'user', 'action' => 'index'));
                 ?>
             </div>
         </div>
@@ -26,10 +26,13 @@
 <br>
          <?php
              if(isset($value)&&!empty($value)){
+                 $item=$this->Session->read('User.target-item');
+                 $price=$this->Session->read('User.target-price');
+                 $span=$this->Session->read('User.target-span');
                  echo "<ul class='breadcrumb'>";
-                 echo '目標商品: '.$this->Session->read('User.target-item')."<br>";
-                 echo '目標金額: '.$this->Session->read('User.target-price')."円<br>";
-                 echo '目標期間: '.$this->Session->read('User.target-span')."ヶ月";
+                 if(!empty($item))echo '目標商品: '.$item."<br>";
+                 if(!empty($price))echo '目標金額: '.$price."円<br>";
+                 if(!empty($span))echo '目標期間: '.$span."ヶ月";
                  echo "</ul>";
              }
          ?>

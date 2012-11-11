@@ -11,7 +11,7 @@
             echo '<style type="text/css">body {padding-bottom: 40px;} </style>';
             echo $html->css("bootstrap-responsive.min.css", "stylesheet");
             echo $scripts_for_layout;
-            echo '<style type="text/css">.navbar-fixed-top{position: fixed;} .brand [class^="icon-"], .brand [class*=" icon-"]{background-image: url("/img/glyphicons-halflings-white.png"); margin-top: 5px;}</style>';
+            echo '<style type="text/css">.navbar-fixed-top{position: fixed;} .brand [class^="icon-"], .brand [class*=" icon-"]{background-image: url("/img/glyphicons-halflings-white.png"); margin-top: 5px;} .icon-home, .icon-play-circle, .icon-user{background-image: url("/img/glyphicons-halflings-white.png");} </style>';
             echo $html->css("bootstrap-habeo-tuned.css", "stylesheet")
         ?>
     </head>
@@ -27,16 +27,16 @@
                 </a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'));?>">GameDEPosit</a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'), array('class' => 'bland'));?>"><i class=icon-home></i></a>
-                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'maricolle'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i> </a>
+                <a class="brand" href="<?php echo $html->url(array('controller' => 'main', 'action' => 'maricolle'), array('class' => 'bland'));?>"><i class="icon-play-circle"></i></a>
                 <a class="brand" href="<?php echo $html->url(array('controller' => 'communities', 'action' => 'index'), array('class' => 'bland'));?>"><i class="icon-user"></i> </a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li><?php echo $html->link('Home', array('controller' => 'main', 'action' => 'home'));?></li>
-                        <li><?php echo $html->link('Game', array('controller' => 'main', 'action' => 'maricolle'));?></li>
-                        <li><?php echo $html->link('Community', array('controller' => 'communities', 'action' => 'index'));?></li>
+                        <li><a href="<?php echo $html->url(array('controller' => 'main', 'action' => 'home'));?>"><i class=icon-home></i> Home</a></li>
+                        <li><a href="<?php echo $html->url(array('controller' => 'main', 'action' => 'maricolle'));?>"><i class="icon-play-circle"></i> Game</a></li>
+                        <li><a href="<?php echo $html->url(array('controller' => 'communities', 'action' => 'index'));?>"><i class="icon-user"></i> Community</a></li>
                         <li><?php echo $html->link('Tweet', array('controller' => 'main', 'action' => 'tweet'));?></li>
-                        <li><?php echo $html->link('User', array('controller' => 'user', 'action' => 'index'));?></li>
-                        <li><?php echo $html->link('Help', array('controller' => 'main', 'action' => 'help'));?></li>
+                        <li><?php echo $html->link('User Info', array('controller' => 'user', 'action' => 'index'));?></li>
+                        <li><?php echo $html->link('About this Game', array('controller' => 'main', 'action' => 'help'));?></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
