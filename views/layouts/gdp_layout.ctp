@@ -17,9 +17,9 @@
     </head>
 
     <body <?php if(isset($body_for_layout)) ?>>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="padding-right:-5px;">
         <div class="navbar-inner">
-            <div class="container" style="padding: 0px 20px 0px 20px">
+            <div class="container" style="padding: 0px 20px 0px 10px">
                 <a class="btn btn-navbar" data-toggle="collapse"
                     data-target=".nav-collapse"> <span class="icon-bar"></span>
                     <span class="icon-bar"></span> <span
