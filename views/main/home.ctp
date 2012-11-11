@@ -23,7 +23,7 @@
                  echo "<ul class='breadcrumb'>";
                  echo '目標商品: '.$this->Session->read('User.target-item')."<br>";
                  echo '目標金額: '.$this->Session->read('User.target-price')."<br>";
-                 echo '目標期間: '.$this->Session->read('User.target-span')."<br>";
+                 echo '目標期間: '.$this->Session->read('User.target-span');
                  echo "</ul>";
              }
          ?>
