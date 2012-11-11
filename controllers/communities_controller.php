@@ -9,7 +9,7 @@ class CommunitiesController extends AppController{
     function beforeFilter() {
         parent::beforeFilter();
         $this->layout = 'gdp_layout';
-        $title_for_layout = 'GameDePosit';
+        $title_for_layout = 'GameDEPosit';
         $this->set(compact('title_for_layout','body_for_layout'));
 
     }
