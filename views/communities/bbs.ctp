@@ -17,7 +17,7 @@
 	?>
 	</div>
 	</div>
-   	<ul class="thumbnails">
+   	<ul class="row">
 	<?php foreach ($all_bbs as $bbs) { ?>
     		<li class="span9">
     			    <table class="table table-bordered">
