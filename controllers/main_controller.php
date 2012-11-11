@@ -19,6 +19,15 @@ class MainController extends AppController {
         parent::beforeFilter();
         $this->layout = 'gdp_layout';
         $title_for_layout = 'GameDEPosit';
+        if(isset($this->data['User'])){
+            if(!empty($this->data['User'])){
+                $this->Session->write('User.name', $this->data['User']['name']);
+                $this->Session->write('User.age', $this->data['User']['age']);
+                $this->Session->write('User.target-item', $this->data['User']['target-item']);
+                $this->Session->write('User.target-price', $this->data['User']['target-price']);
+                $this->Session->write('User.target-span', $this->data['User']['target-span']);
+            }
+        }
         $this->set(compact('title_for_layout','body_for_layout'));
         App::import('Vendor', 'oauth', array('file' => 'OAuth'.DS.'oauth_consumer.php'));
     }

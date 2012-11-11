@@ -54,18 +54,18 @@ $j_prices = json_encode($prices);
 	<br /><br />
 	<?php
 	echo $form->create(null, array('url' => '/main/'));
-	echo $form->input(array('label'=>false), array('size' => '40', 'placeholder'=>'名前'));
+	echo $form->input('User.name',array('label'=>false, 'type'=>'text', 'placeholder'=>'名前'), array('size' => '40'));
 	echo $form->select('User.gender', array('male' => '男性', 'female' => '女性'), null, array('empty' => '性別')) . '<br />';
-	echo $form->input(array('label'=>false),array('placeholder'=>'年齢'));
-	echo $form->input(array('label'=>false),array('id' => 'tgt', 'placeholder'=>'目標商品'));
+	echo $form->input('User.age',array('label'=>false, 'type'=>'text','placeholder'=>'年齢'));
+	echo $form->input('User.target-item',array('label'=>false, 'id' => 'tgt', 'placeholder'=>'目標商品'));
 	?>
 	<select id="goods">
 	<option value="empty">未選択</option>
 	</select>
 	<?php
-	echo $form->input(array('label'=>false), array('id' => 'prc', 'placeholder'=>'目標金額'));
+	echo $form->input('User.target-price',array('label'=>false, 'id' => 'prc', 'placeholder'=>'目標金額'));
 	echo "何ヶ月で貯金を達成したいですか？<br />";
-	echo $form->input(array('label'=>false), array(
+	echo $form->input('User.target-span',array('label'=>false,
 			'type' => 'select',
 			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月'),
 			'selected' => '3',
