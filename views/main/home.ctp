@@ -12,12 +12,18 @@
     <div class="container">
         <div class="row">
             <div class="span9">
-                <img src="/img/app_top.gif">
+            <?php
+                if(isset($value)&&!empty($value))
+                    echo '<img src="/img/app_top.gif" style="max-width:65%">';
+                else
+                    echo '<img src="/img/app_top.gif">';
+                ?>
             </div>
         </div>
     </div>
 </section>
 </div>
+<br>
          <?php
              if(isset($value)&&!empty($value)){
                  echo "<ul class='breadcrumb'>";
@@ -27,3 +33,4 @@
                  echo "</ul>";
              }
          ?>
+<br>
