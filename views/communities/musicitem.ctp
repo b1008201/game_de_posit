@@ -1,6 +1,6 @@
 	<div class="container">
 	   <ul class="breadcrumb">
-			<li><a href="http://localhost/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
+			<li><a href="/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
 			<li class="active">楽器</li>
 	   </ul>
  

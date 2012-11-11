@@ -1,8 +1,8 @@
 
 
 	   <ul class="breadcrumb">
-			<li><a href="http://localhost/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
-			<li><a href="http://localhost/communities/musicitem">楽器</a> <span class="divider">/</span></li>
+			<li><a href="/communities/index">コミュニティTOP</a> <span class="divider">/</span></li>
+			<li><a href="/communities/musicitem">楽器</a> <span class="divider">/</span></li>
 			<li class="active">アルトサクソフォン</li>
 	   </ul>
 	   
@@ -17,8 +17,8 @@
 	echo $form->end();
 	?>
 
+   	<ul class="thumbnails">
 	<?php foreach ($all_bbs as $bbs) { ?>
-    	<ul class="thumbnails">
     		<li class="span9">
     			    <table class="table table-bordered">
     			        <tr>
@@ -27,8 +27,8 @@
     			        </tr>
     			    </table>
 			</li>
-		</ul>
 	<?php	}?>
+	</ul>
 	</div>
 </div>
 
