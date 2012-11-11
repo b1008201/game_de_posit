@@ -51,21 +51,21 @@ $j_prices = json_encode($prices);
 <body>
 	<h3>Welcome to Game DE Posit!</h3>
 	<br /> 目標を設定して，さっそく貯金を始めましょう！
-	<br />
+	<br /><br />
 	<?php
 	echo $form->create(null, array('url' => '/main/'));
-	echo $form->input('名前', array('size' => '40'));
-	echo '性別：' . $form->select('User.gender', array('male' => '男性', 'female' => '女性'), null, array('empty' => '性別')) . '<br />';
-	echo $form->input('年齢');
-	echo $form->input('目標商品', array('id' => 'tgt'));
+	echo $form->input(array('label'=>false), array('size' => '40', 'placeholder'=>'名前'));
+	echo $form->select('User.gender', array('male' => '男性', 'female' => '女性'), null, array('empty' => '性別')) . '<br />';
+	echo $form->input(array('label'=>false),array('placeholder'=>'年齢'));
+	echo $form->input(array('label'=>false),array('id' => 'tgt', 'placeholder'=>'目標商品'));
 	?>
 	<select id="goods">
 	<option value="empty">未選択</option>
 	</select>
 	<?php
-	echo $form->input('目標金額', array('id' => 'prc'));
+	echo $form->input(array('label'=>false), array('id' => 'prc', 'placeholder'=>'目標金額'));
 	echo "何ヶ月で貯金を達成したいですか？<br />";
-	echo $form->input('目標期間', array(
+	echo $form->input(array('label'=>false), array(
 			'type' => 'select',
 			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月'),
 			'selected' => '3',
