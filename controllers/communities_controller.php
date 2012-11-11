@@ -37,7 +37,6 @@ class CommunitiesController extends AppController{
             }
         }
 
-
         $this->paginate = array(
                 'limit' => 5,
                 'order' => array('Community.created' => 'desc'),

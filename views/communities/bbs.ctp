@@ -18,7 +18,6 @@
 	?>
 
    	<ul class="thumbnails">
-   	<?php var_dump($all_bbs);?>
 	<?php foreach ($all_bbs as $bbs) { ?>
     		<li class="span9">
     			    <table class="table table-bordered">
