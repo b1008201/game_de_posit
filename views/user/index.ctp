@@ -70,7 +70,7 @@ $j_prices = json_encode($prices);
 			'options' => array('1' => '1ヶ月', '2' => '2ヶ月', '3' => '3ヶ月', '4' => '4ヶ月'),
 			'selected' => '3',
 			 ));
-	echo $form->submit('登録');
+	echo $form->submit('登録',array('class'=>'btn btn-primary'));
 	echo $form->end();
 	?>
 </body>
