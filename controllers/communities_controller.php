@@ -42,7 +42,7 @@ class CommunitiesController extends AppController{
                 'limit' => 5,
                 'order' => array('Community.created' => 'desc'),
                 );
-        $this->set('all_bbs', $this->paginate());
+        $this->set('all_bbs', $this->paginate('Community'));
     }
 
 }
