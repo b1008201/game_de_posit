@@ -17,7 +17,7 @@ class UserController extends AppController {
 
     function beforeFilter() {
     	parent::beforeFilter();
-//    	$this->layout = 'gdp_user_layout';
+    	$this->layout = 'gdp_user_layout';
     	$title_for_layout = 'GameDEPosit';
     	$this->set(compact('title_for_layout','body_for_layout'));
     }

@@ -10,7 +10,6 @@
     <div class="span9">
 	<?php
 	$bbs=array();
-
 	echo $form->create("Community", array("action" => "bbs" ));
 	echo $form->textarea("Community.comment",array("maxLength" => "140" ,"rows" => "4")); 
 	echo $form->input("Community.username"); 
@@ -18,10 +17,9 @@
 	echo $form->end();
 	?>
 
-	<?php var_dump($all_bbs)?>
 	<?php foreach ($all_bbs as $bbs) { ?>
     	<ul class="thumbnails">
-    		<li class="span2">
+    		<li class="span9">
     			    <table class="table table-bordered">
     			        <tr>
     			            <td><?php echo h($bbs["Community"]["username"]); ?></td>
@@ -46,7 +44,7 @@
                         'tag' => 'li',
                         'escape' => false,
                         'class' => 'prev disabled',
-)); ?>
+                )); ?>
                 <?php
                 $page = $this->params['paging'][$model]['page'];
                 $pageCount = $this->params['paging'][$model]['pageCount'];
