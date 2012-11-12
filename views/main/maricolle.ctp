@@ -1,3 +1,4 @@
+<style type="text/css">body {padding-bottom: 40px;}img{min-width: 50%;} </style>
 <div align="center">
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">

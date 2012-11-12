@@ -17,7 +17,7 @@
                 <form  action="./tweet_callback" method="post">
                     <fieldset>
                         <p><legend>Twitterに投稿する</legend></p>
-                        <input type="text" placeholder="コメント欄" name="data[message]" value="100dpしたよ!">
+                        <input type="text" placeholder="コメント欄" name="data[message]" value="100dpしたよ!" class='span7'>
                         <button type="submit" class="btn btn-primary" style="margin-bottom:9px">ツイートする</button>
                         <p><span class="help-inline">あなたのデポジット状況をTwitterで共有しましょう．</span></p>
                     </fieldset>

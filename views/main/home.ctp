@@ -1,4 +1,5 @@
-        <?php
+<style type="text/css">body {padding-bottom: 40px;}img{min-width: 75%;} </style>
+<?php
              $value =$this->Session->read('User.name');
              if(isset($value)&&!empty($value)){
                  echo "<ul class='breadcrumb'>";
