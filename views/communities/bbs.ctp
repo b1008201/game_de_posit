@@ -27,7 +27,7 @@
     		<li class="span9">
     			    <table class="table table-bordered">
     			        <tr>
-    			            <td><?php echo h($bbs["Community"]["username"]); ?></td>
+    			            <th><?php echo h($bbs["Community"]["username"]); ?></th>
     			            <td><?php echo h($bbs["Community"]["comment"]); ?></td>
     			        </tr>
     			    </table>
