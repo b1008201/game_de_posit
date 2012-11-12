@@ -29,11 +29,12 @@
                  $item=$this->Session->read('User.target-item');
                  $price=$this->Session->read('User.target-price');
                  $span=$this->Session->read('User.target-span');
-                 echo "<ul class='breadcrumb'>";
+                 if(!(empty($item)&&empty($price)&&empty($span))) echo "<ul class='breadcrumb'>";
                  if(!empty($item))echo '目標商品: '.$item."<br>";
                  if(!empty($price))echo '目標金額: '.$price."円<br>";
                  if(!empty($span))echo '目標期間: '.$span."ヶ月";
-                 echo "</ul>";
+                 if(!(empty($item)&&empty($price)&&empty($span))) echo "</ul>";
+                 else echo "<br><br>";
              }
          ?>
 <br>
