@@ -10,7 +10,7 @@
 	<?php
 	$bbs=array();
 	echo $form->create("Community", array("action" => "bbs" ));
-	echo $form->textarea("Community.comment",array("maxLength" => "140" ,"rows" => "4", 'placeholder'=>'本文')); 
+	echo $form->textarea("Community.comment",array("maxLength" => "140" ,"rows" => "4", 'placeholder'=>'本文', 'class'=>'span8')); 
 	$username=$this->Session->read('User.name');
 	if(empty($username)){
 	    echo $form->input("Community.username",array('type'=>'text', 'placeholder'=>'ユーザ名','label'=>false)); 
